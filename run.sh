@@ -7,7 +7,14 @@ set -ex
 
 origin="$(readlink -f -- "$0")"
 origin="$(dirname "$origin")"
+
+if [[ "$1" == "" ]]; then
+    echo "ERROR: No system image path specified, aborting..."
+    exit 0
+fi
+
 image_path="$1"
+
 targetArch=64
 [ "$2" == 32 ] && targetArch=32
 
