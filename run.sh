@@ -7,16 +7,12 @@ set -ex
 
 origin="$(readlink -f -- "$0")"
 origin="$(dirname "$origin")"
-
+image_path="$1"
 targetArch=64
-[ "$1" == 32 ] && targetArch=32
+[ "$2" == 32 ] && targetArch=32
 
-[ -z "$ANDROID_BUILD_TOP" ] && ANDROID_BUILD_TOP=/build2/AOSP-11.0/
-if [ "$targetArch" == 32 ];then
-    simg2img $ANDROID_BUILD_TOP/out/target/product/phhgsi_arm_ab/system.img s.img
-else
-    simg2img $ANDROID_BUILD_TOP/out/target/product/phhgsi_arm64_ab/system.img s.img
-fi
+simg2img $image_path s.img
+
 rm -Rf tmp
 mkdir -p d tmp
 e2fsck -y -f s.img
