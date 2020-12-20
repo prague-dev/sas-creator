@@ -15,6 +15,8 @@ fi
 
 image_path="$1"
 
+[ ! -d vendor_vndk ] && git clone https://github.com/prague-dev/vendor_vndk -b android-11.0
+
 targetArch=64
 [ "$2" == 32 ] && targetArch=32
 
