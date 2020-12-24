@@ -84,8 +84,8 @@ on early-fs
     setprop ro.vndk.version ${persist.sys.vndk}
     exec -- /system/bin/linkerconfig --target /linkerconfig
 
-    setprop ro.product.manufacturer phh
-    setprop ro.product.model phh
+    setprop ro.product.manufacturer Huawei
+    setprop ro.product.model PRA-LX1
     setprop persist.sys.usb.config adb
 
     mkdir /data/system_de 0770 system system
@@ -104,7 +104,7 @@ on early-fs
     mkdir /data/rollback 0700 system system
 
     setprop sys.usb.config adb
-    setprop ro.build.fingerprint unknown/unknown/unknown:11/RP1A.200720.011/phh:userdebug/test-keys
+    setprop ro.build.fingerprint Android/prague/aosp_prague:11/RP1A.200720.011/prague:userdebug/test-keys
 
     # Create mirror directory for jit profiles
     mkdir /data_mirror/cur_profiles 0700 root root
