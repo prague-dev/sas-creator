@@ -85,7 +85,7 @@ on early-fs
     exec -- /system/bin/linkerconfig --target /linkerconfig
 
     setprop ro.product.manufacturer Huawei
-    setprop ro.product.model PRA-LX1
+    setprop ro.product.model $(cat /sys/firmware/devicetree/base/boardinfo/normal_product_name | tr -d '\n')
     setprop persist.sys.usb.config adb
 
     mkdir /data/system_de 0770 system system
