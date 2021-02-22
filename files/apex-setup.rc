@@ -86,6 +86,7 @@ on early-fs
 
     setprop ro.product.manufacturer Huawei
     setprop ro.product.model $(cat /sys/firmware/devicetree/base/boardinfo/normal_product_name | tr -d '\n')
+    setprop ro.product.system.model prague
     setprop persist.sys.usb.config adb
 
     mkdir /data/system_de 0770 system system
